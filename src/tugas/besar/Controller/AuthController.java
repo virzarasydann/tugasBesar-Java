@@ -25,7 +25,7 @@ public class AuthController {
         userDAO userDao = new userDAO();
         User user = userDao.checkUsername(username);
 
-        if (user != null) {
+        if (user != null && user.login(password)) {
             return user; 
         } else {
             return null; 
